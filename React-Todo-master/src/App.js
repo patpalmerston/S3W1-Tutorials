@@ -5,19 +5,9 @@ import './todo.css';
 
 const todosData = [
 	{
-		id: 1,
-		text: 'wash car',
-		completed: false
-	},
-	{
-		id: 2,
-		text: 'walk dog',
-		completed: false
-	},
-	{
-		id: 3,
-		text: 'read 30 min',
-		completed: false
+		id: Date.now(),
+			text: 'Lets Get Started!',
+			completed: false
 	}
 ];
 
