@@ -11,7 +11,7 @@ const TodoList = props => {
 				// console.log(todo);
 				return <Todo todo={todo} key={todo.id} toggleTodo={props.toggleTodo} />;
 			})}
-			<button className='clear-btn' onClick={null}>
+			<button className='clear-btn' onClick={props.clearTodo}>
 				Clear Todo
 			</button>
 		</div>

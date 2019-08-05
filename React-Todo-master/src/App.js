@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
-import './todo.css'
+import './todo.css';
 
 const todosData = [
 	{
@@ -47,12 +47,23 @@ class App extends React.Component {
 		});
 	};
 
-	addTodo = e => {
-		console.log('addTodo', e);
+	addTodo = text => {
+		console.log('addTodo', text);
+		const newTodo = {
+			id: Date.now(),
+			text: text,
+			completed: false
+		};
+		this.setState({
+			todos: [...this.state.todos, newTodo]
+		});
 	};
 
 	clearTodo = e => {
 		console.log('clearTodo', e);
+		this.setState({
+			todos: this.state.todos.filter(todo => !todo.completed)
+		});
 	};
 
 	render() {
@@ -60,7 +71,7 @@ class App extends React.Component {
 			<div className='App'>
 				<div className='header'>
 					<h1>Todo List</h1>
-					<TodoForm clearTodo={this.clearTodo} />
+					<TodoForm addTodo={this.addTodo} />
 				</div>
 				<TodoList
 					todos={this.state.todos}
