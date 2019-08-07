@@ -1,16 +1,13 @@
 import React from 'react';
-import Followers from './Followers'
 
-
-const User = () => {
-	return(
-
+const User = props => {
+	return (
 		<div>
-			Users Components
-			<Followers />
+      <h1>User</h1>
+			<img src={props.user.avatar_url} alt='pat' />
+			<h3>{props.user.login}</h3>
 		</div>
-
-	)
+	);
 };
 
 export default User;

@@ -20,7 +20,8 @@ class TodoFrom extends React.Component {
 	submitItem = e => {
 		console.log('submitItem', e);
 		e.preventDefault();
-		this.props.addTodo(this.state.text)
+		this.props.addTodo(this.state.text);
+		this.setState({ text: '' }); // this clears the input value to be empty after submission
 	};
 
 	render() {
@@ -34,7 +35,7 @@ class TodoFrom extends React.Component {
 						value={this.text}
 						onChange={this.handleChanges}
 					/>
-					<button>Add</button>
+					<button type='submit'>Add</button>
 				</form>
 			</>
 		);
